@@ -27,9 +27,22 @@ $breakpoint-small: 576px;
     padding-left: 10px;
     padding-right: 10px;
     box-sizing: border-box;
+    align-items: center;
 
     &.grid{
         flex-wrap: wrap;
+    }
+
+    &.row{
+        justify-content: space-between;
+    }
+
+    .row-item{
+        padding: 0 10px;
+    }
+
+    &.row-center{
+        justify-content: center;
     }
 
     .grid-item {
@@ -63,14 +76,6 @@ $breakpoint-small: 576px;
 @media (min-width: $breakpoint-large) {
     @each $division in $divisions {
         .col-lg-#{$division} {
-            width: 100% / $division;
-        }
-    }
-}
-
-@media (min-width: $breakpoint-x-large) {
-    @each $division in $divisions {
-        .col-xlg-#{$division} {
             width: 100% / $division;
         }
     }

@@ -2,27 +2,124 @@
 
 This is for styling the UI elements of Behance.net clone
 */
+$site-nav-color: #191919;
+$behance-blue: #0057ff;
+
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Acumin Pro Bold';
+}
+
+@mixin color-fill($color) {
+    fill: $color;
+    color: $color;
+}
 
 nav {
     height: 60px;
+    font-size: 15px;
+
+    a{
+        display: flex;
+        align-items: center;
+    }
 
     &.site-nav {
-        background-color: #2b2b2b;
+        background-color: $site-nav-color;
+
+        a {
+            @include color-fill(white)
+        }
+        a:hover{
+            @include color-fill(white)
+        }
+
+        svg {
+            height: 16px;
+        }
+
+        .hide-sm {
+            display: none;
+        }
     }
 
     &.main-nav {
-        box-shadow: 0 0 4px rgba(0, 0, 0, .1)
+        box-shadow: 0 0 4px rgba(0, 0, 0, .1);
+
+        a{
+            color: $behance-blue;
+        }
+
+        a:hover{
+            @include color-fill(black)
+        }
     }
+
+
+}
+
+
+@mixin showcase-height($showcase-height) {
+    height: $showcase-height;
+    font-size: $showcase-height/3;
 }
 
 .showcase {
-    height: 210px;
-    background-color: red;
+    @include showcase-height(100px);
+
+    color: white;
+    background-image: url("https://a5.behance.net/34469dc70cc9112a2e59c09efe8fe570cc65b3d6/img/site/1x/cta-header.jpg");
+    background-size: cover;
+    background-position: 50%;
+
+    & h1 {
+        text-align: center;
+        letter-spacing: -0.11rem;
+    }
+
+}
+
+@media (min-width: 600px) {
+    .showcase {
+        @include showcase-height(160px);
+    }
+}
+
+@media (min-width: 1024px) {
+    nav {
+        &.site-nav {
+            a{
+                @include color-fill(#a4a4a4)
+            }
+
+            .white{
+                @include color-fill(white)
+            }
+
+            .menu-btn {
+                display: none;
+            }
+
+            .hide-sm {
+                display: flex;
+            }
+        }
+
+    }
+
+    .showcase {
+        @include showcase-height(210px);
+    }
 }
 
 .gallery {
-    padding-top: 50px ;
-    padding-bottom: 50px ;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 .card {
