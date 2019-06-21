@@ -3,35 +3,46 @@
 This is for styling the UI elements of Behance.net clone
 */
 
-nav{
+nav {
     height: 60px;
 
-    &.site-nav{
+    &.site-nav {
         background-color: #2b2b2b;
     }
 
-    &.main-nav{
+    &.main-nav {
         box-shadow: 0 0 4px rgba(0, 0, 0, .1)
     }
 }
 
-.showcase{
+.showcase {
     height: 210px;
     background-color: red;
 }
 
-.gallery{
-    padding-top: 50px 0;
-
-    display: grid;
-    grid-template-columns: repeat(5,1fr);
-    grid-gap: 20px;
+.gallery {
+    padding-top: 50px ;
+    padding-bottom: 50px ;
 }
 
-.card{
-    padding-bottom: 78%;
-    height: 0;
-    width: 100%;
-    background-color: grey;
-    border-radius: 10px;
+.card {
+    div {
+        border-radius: 5px;
+        overflow: hidden;
+        background-color: #838383;
+
+        a {
+            position: relative;
+            display: block;
+            width: 100%;
+            padding-top: 78%;
+
+            img {
+                position: absolute;
+                top: 0;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
 }

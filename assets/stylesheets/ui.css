@@ -21,19 +21,27 @@ nav.main-nav {
 }
 
 .gallery {
-  padding-top: 50px 0;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[5];
-      grid-template-columns: repeat(5, 1fr);
-  grid-gap: 20px;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
-.card {
-  padding-bottom: 78%;
-  height: 0;
+.card div {
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: #838383;
+}
+
+.card div a {
+  position: relative;
+  display: block;
   width: 100%;
-  background-color: grey;
-  border-radius: 10px;
+  padding-top: 78%;
+}
+
+.card div a img {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
 }
 /*# sourceMappingURL=ui.css.map */

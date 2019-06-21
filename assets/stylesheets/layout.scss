@@ -4,3 +4,74 @@
 
    Grid based framework
 */
+
+// variables
+$divisions: 2,
+3,
+4,
+5,
+6,
+8,
+10,
+12;
+
+$breakpoint-x-large: 1440px;
+$breakpoint-large: 1200px;
+$breakpoint-medium: 960px;
+$breakpoint-small: 576px;
+
+
+.container {
+    width: 100%;
+    display: flex;
+    padding-left: 10px;
+    padding-right: 10px;
+    box-sizing: border-box;
+
+    &.grid{
+        flex-wrap: wrap;
+    }
+
+    .grid-item {
+        padding: 10px;
+        box-sizing: border-box;
+    }
+}
+
+// columns
+.grid-item {
+    width: 100%;
+}
+
+
+@media (min-width: $breakpoint-small) {
+    @each $division in $divisions {
+        .col-sm-#{$division} {
+            width: 100% / $division;
+        }
+    }
+}
+
+@media (min-width: $breakpoint-medium) {
+    @each $division in $divisions {
+        .col-md-#{$division} {
+            width: 100% / $division;
+        }
+    }
+}
+
+@media (min-width: $breakpoint-large) {
+    @each $division in $divisions {
+        .col-lg-#{$division} {
+            width: 100% / $division;
+        }
+    }
+}
+
+@media (min-width: $breakpoint-x-large) {
+    @each $division in $divisions {
+        .col-xlg-#{$division} {
+            width: 100% / $division;
+        }
+    }
+}
