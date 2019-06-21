@@ -4,6 +4,9 @@ This is for styling the UI elements of Behance.net clone
 */
 $site-nav-color: #191919;
 $behance-blue: #0057ff;
+$behance-blue-hover: #0048d8;
+$facebook-blue: #3b5998;
+$facebook-blue-hover: #263963;
 
 
 a {
@@ -45,6 +48,37 @@ nav {
 
         .hide-sm {
             display: none;
+        }
+        .blue-btn{
+            background-color: $behance-blue;
+            height: 32px;
+            border-radius: 16px;
+            font-size: 14px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            transition: .3s ;
+            &:hover{
+                background-color: $behance-blue-hover;
+            }
+        }
+        
+        .icon{
+            height: 32px;
+            width: 12px;
+            justify-content: center;
+            border-radius: 16px;
+        }
+
+        .facebook-icon{
+            background-color: $facebook-blue;
+            margin-right: 10px;
+        }
+        
+        .facebook-icon:hover{
+            background-color: $facebook-blue-hover;
+        }
+        .google-icon{
+            background-color: white;
         }
     }
 
@@ -109,15 +143,20 @@ nav {
 @media (min-width: 1024px) {
     nav {
         &.site-nav {
-            a{
+            a,span{
                 @include color-fill(#a4a4a4)
+            }
+
+            span{
+                margin-top: 10px;
+                font-size: 12px;
             }
 
             .white{
                 @include color-fill(white)
             }
 
-            .menu-btn {
+            .hide-lg{
                 display: none;
             }
 
@@ -159,3 +198,5 @@ nav {
         }
     }
 }
+
+

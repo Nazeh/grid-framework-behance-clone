@@ -47,6 +47,43 @@ nav.site-nav .hide-sm {
   display: none;
 }
 
+nav.site-nav .blue-btn {
+  background-color: #0057ff;
+  height: 32px;
+  border-radius: 16px;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+nav.site-nav .blue-btn:hover {
+  background-color: #0048d8;
+}
+
+nav.site-nav .icon {
+  height: 32px;
+  width: 12px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 16px;
+}
+
+nav.site-nav .facebook-icon {
+  background-color: #3b5998;
+  margin-right: 10px;
+}
+
+nav.site-nav .facebook-icon:hover {
+  background-color: #263963;
+}
+
+nav.site-nav .google-icon {
+  background-color: white;
+}
+
 nav.main-nav {
   -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
           box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
@@ -105,15 +142,19 @@ nav.main-nav .hScroll a {
 }
 
 @media (min-width: 1024px) {
-  nav.site-nav a {
+  nav.site-nav a, nav.site-nav span {
     fill: #a4a4a4;
     color: #a4a4a4;
+  }
+  nav.site-nav span {
+    margin-top: 10px;
+    font-size: 12px;
   }
   nav.site-nav .white {
     fill: white;
     color: white;
   }
-  nav.site-nav .menu-btn {
+  nav.site-nav .hide-lg {
     display: none;
   }
   nav.site-nav .hide-sm {
