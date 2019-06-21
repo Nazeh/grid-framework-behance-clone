@@ -1,5 +1,25 @@
 /* https://github.com/Nazeh/grid-framework-behance-clone
 
-
 This is for styling the UI elements of Behance.net clone
 */
+
+nav{
+    height: 60px;
+
+    &.site-nav{
+        background-color: #2b2b2b;
+    }
+
+    &.main-nav{
+        box-shadow: 0 0 4px rgba(0, 0, 0, .1)
+    }
+}
+
+.showcase{
+    height: 210px;
+    background-color: red;
+}
+
+.gallery{
+    padding-top: 50px 0;
+}
