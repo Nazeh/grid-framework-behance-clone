@@ -22,5 +22,18 @@ nav.main-nav {
 
 .gallery {
   padding-top: 50px 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[5];
+      grid-template-columns: repeat(5, 1fr);
+  grid-gap: 20px;
+}
+
+.card {
+  padding-bottom: 78%;
+  height: 0;
+  width: 100%;
+  background-color: grey;
+  border-radius: 10px;
 }
 /*# sourceMappingURL=ui.css.map */
