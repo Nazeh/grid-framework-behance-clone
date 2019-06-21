@@ -61,6 +61,28 @@ nav.main-nav a:hover {
   color: black;
 }
 
+nav.main-nav .hScroll {
+  width: 600px;
+  height: 300px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  -webkit-transform-origin: right top;
+          transform-origin: right top;
+  -webkit-transform: rotate(-90deg) translateY(-100px);
+          transform: rotate(-90deg) translateY(-100px);
+}
+
+nav.main-nav .hScroll a {
+  width: 600px;
+  height: 100px;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  -webkit-transform-origin: right top;
+          transform-origin: right top;
+}
+
 .showcase {
   height: 100px;
   font-size: 33.33333px;
