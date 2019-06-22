@@ -40,13 +40,10 @@ nav.site-nav .hide-sm {
 
 nav.site-nav .blue-btn {
   background-color: #0057ff;
-  height: 32px;
-  border-radius: 16px;
+  width: 160px;
   font-size: 14px;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
-  -webkit-transition: .3s;
-  transition: .3s;
 }
 
 nav.site-nav .blue-btn:hover {
@@ -54,17 +51,21 @@ nav.site-nav .blue-btn:hover {
 }
 
 nav.site-nav .icon {
+  display: -ms-grid;
+  display: grid;
   height: 32px;
-  width: 12px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  place-content: center;
   border-radius: 16px;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+nav.site-nav .circle-icon {
+  width: 32px;
 }
 
 nav.site-nav .facebook-icon {
   background-color: #3b5998;
-  margin-right: 10px;
 }
 
 nav.site-nav .facebook-icon:hover {
@@ -82,7 +83,6 @@ nav.site-nav .google-icon {
     color: #a4a4a4;
   }
   nav.site-nav span {
-    margin-top: 10px;
     font-size: 12px;
   }
   nav.site-nav .white {
@@ -105,10 +105,9 @@ nav.main-nav {
 }
 
 nav.main-nav .hScroll {
-  height: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  padding: 25px .5rem;
+  padding: 0 .5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

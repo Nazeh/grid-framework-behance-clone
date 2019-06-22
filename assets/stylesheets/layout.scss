@@ -36,10 +36,9 @@ $gutter: 1rem;
 
     grid-row-gap: $gutter;
 
-    align-content: center;
-
     .cell {
         display: grid;
+        align-content: center;
         grid-column: span 120;
         padding-left: $gutter / 2;
         padding-right: $gutter / 2;
