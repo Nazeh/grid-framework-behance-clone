@@ -134,13 +134,13 @@ nav {
         }
 
         a {
-            color: $behance-blue;
+            color: black;
             padding: 0 .5rem;
             flex: 0 0 auto;
         }
 
         a:hover {
-            @include color-fill(black)
+            color: $behance-blue;
         }
 
     }

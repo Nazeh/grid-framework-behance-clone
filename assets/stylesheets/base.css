@@ -67,7 +67,7 @@ table {
           box-sizing: border-box;
   display: -ms-grid;
   display: grid;
-  
+  -ms-grid-columns: (1fr)[120];
       grid-template-columns: repeat(120, 1fr);
   grid-row-gap: 1rem;
 }
@@ -367,7 +367,7 @@ nav.main-nav .hScroll {
 }
 
 nav.main-nav a {
-  color: #0057ff;
+  color: black;
   padding: 0 .5rem;
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
@@ -375,8 +375,7 @@ nav.main-nav a {
 }
 
 nav.main-nav a:hover {
-  fill: black;
-  color: black;
+  color: #0057ff;
 }
 
 .showcase {
