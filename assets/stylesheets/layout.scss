@@ -1,0 +1,99 @@
+/* https://github.com/Nazeh/grid-framework-behance-clone
+   v0.0.1 | 20190621
+   License: none (public domain)
+
+   Grid based framework
+*/
+
+// variables
+$divisions: 2,
+3,
+4,
+5,
+6,
+8,
+10,
+12;
+
+$breakpoint-x-large: 1440px;
+$breakpoint-large: 1200px;
+$breakpoint-medium: 960px;
+$breakpoint-small: 576px;
+
+$gutter: 1rem;
+
+
+// Grid system
+.container {
+    width: 100%;
+    height: 100%;
+    padding-left: $gutter / 2;
+    padding-right: $gutter / 2;
+    box-sizing: border-box;
+
+    display: grid;
+    grid-template-columns: repeat(120, 1fr);
+
+    grid-row-gap: $gutter;
+
+    .cell {
+        display: grid;
+        align-content: center;
+        grid-column: span 120;
+        padding-left: $gutter / 2;
+        padding-right: $gutter / 2;
+
+        &.left {
+            justify-content: left;
+        }
+
+        &.center {
+            justify-content: center;
+        }
+
+        &.right {
+            justify-content: right;
+        }
+    }
+
+
+    @each $division in $divisions {
+        .col-#{$division} {
+            grid-column: span 120/$division;
+        }
+    }
+
+    @media (min-width: $breakpoint-small) {
+        @each $division in $divisions {
+            .col-sm-#{$division} {
+                grid-column: span 120/$division;
+            }
+        }
+    }
+
+
+    @media (min-width: $breakpoint-medium) {
+        @each $division in $divisions {
+            .col-md-#{$division} {
+                grid-column: span 120/$division;
+            }
+        }
+    }
+
+    @media (min-width: $breakpoint-large) {
+        @each $division in $divisions {
+            .col-lg-#{$division} {
+                grid-column: span 120/$division;
+            }
+        }
+    }
+
+    @media (min-width: $breakpoint-x-large) {
+        @each $division in $divisions {
+            .col-xlg-#{$division} {
+                grid-column: span 120/$division;
+            }
+        }
+    }
+
+}

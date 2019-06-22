@@ -1,0 +1,294 @@
+/* https://github.com/Nazeh/grid-framework-behance-clone
+
+This is for styling the UI elements of Behance.net clone
+*/
+$nav-height: 60px;
+$site-nav-color: #191919;
+$behance-blue: #0057ff;
+$behance-blue-hover: #0048d8;
+$facebook-blue: #3b5998;
+$facebook-blue-hover: #263963;
+$btn-height: 32px;
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Acumin Pro Bold';
+}
+
+@mixin v-align {
+    display: grid;
+    align-content: center;
+}
+
+nav {
+    height: $nav-height;
+    font-size: 15px;
+
+    @mixin color-fill($color) {
+        fill: $color;
+        color: $color;
+    }
+
+    &.site-nav {
+
+        background-color: $site-nav-color;
+
+        a {
+            @include color-fill(white)
+        }
+
+        a:hover {
+            @include color-fill(white)
+        }
+
+        svg {
+            height: 16px;
+        }
+
+        .hide-sm {
+            display: none;
+        }
+
+        .blue-btn {
+            background-color: $behance-blue;
+            width: 160px;
+
+            font-size: 14px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+
+            &:hover {
+                background-color: $behance-blue-hover;
+            }
+        }
+
+        .icon {
+            display: grid;
+            height: $btn-height;
+            place-content: center;
+            border-radius: $btn-height/2;
+            transition: .3s;
+        }
+
+        .circle-icon {
+            width: $btn-height;
+        }
+
+        .facebook-icon {
+            background-color: $facebook-blue;
+        }
+
+        .facebook-icon:hover {
+            background-color: $facebook-blue-hover;
+        }
+
+        .google-icon {
+            background-color: white;
+        }
+
+        @media (min-width: 1024px) {
+
+            a,
+            span {
+                @include color-fill(#a4a4a4)
+            }
+
+            span {
+                font-size: 12px;
+            }
+
+            .white {
+                @include color-fill(white)
+            }
+
+            .hide-lg {
+                display: none;
+            }
+
+            .hide-sm {
+                display: flex;
+            }
+        }
+    }
+
+    &.main-nav {
+        box-shadow: 0 0 4px rgba(0, 0, 0, .1);
+
+        .hScroll {
+
+
+            box-sizing: border-box;
+            padding: 0 .5rem;
+
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+
+            @media(min-width: 600px) {
+                justify-content: center;
+            }
+        }
+
+        a {
+            color: $behance-blue;
+            padding: 0 .5rem;
+            flex: 0 0 auto;
+        }
+
+        a:hover {
+            @include color-fill(black)
+        }
+
+    }
+
+
+}
+
+
+
+
+.showcase {
+    @mixin showcase-height($showcase-height) {
+        height: $showcase-height;
+        font-size: $showcase-height/3;
+    }
+
+    @include showcase-height(100px);
+
+    color: white;
+    background-image: url("https://a5.behance.net/34469dc70cc9112a2e59c09efe8fe570cc65b3d6/img/site/1x/cta-header.jpg");
+    background-size: cover;
+    background-position: 50%;
+
+    & h1 {
+        text-align: center;
+        letter-spacing: -0.11rem;
+    }
+
+    @media (min-width: 600px) {
+        @include showcase-height(160px);
+    }
+
+    @media (min-width: 1024px) {
+        @include showcase-height(210px);
+    }
+}
+
+
+.gallery {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    max-width: 3400px;
+    margin: auto;
+}
+
+.card {
+
+    >div {
+        position: relative;
+        border-radius: 5px;
+        overflow: hidden;
+
+        .ribbon {
+            position: absolute;
+            right: 1rem;
+            transform: translateY(-50%);
+            transition: .2s;
+            @media(max-width: 576px){
+                transform: translateY(-15%);
+            }
+
+        }
+
+
+        .cover {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%,
+                    rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, .5) 100%);
+
+            transition: .2s;
+
+            @media (min-width: 576px) {
+                opacity: 0;
+            }
+
+            &:hover {
+                opacity: 1;
+
+                .ribbon {
+                    transform: translateY(-15%);
+
+                    &:hover {
+                        transform: translateY(0%);
+                    }
+                }
+            }
+
+            header {
+                position: absolute;
+                bottom: 0;
+                padding: 1rem .5rem;
+                box-sizing: border-box;
+                width: 100%;
+
+                color: white;
+                fill: white;
+
+                .container {
+                    grid-row-gap: 0;
+                }
+
+                .right div {
+                    display: flex;
+                    justify-content: right;
+                }
+
+                span {
+                    height: 20px;
+                    margin-left: 4px;
+                    transform: translateY(-6px)
+                }
+
+                svg {
+                    height: 100%;
+
+                }
+
+                h2 {
+                    font-size: 16px;
+                    text-transform: capitalize;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+
+                h3 {
+                    font-size: 14px;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+
+                h4 {
+                    font-size: 12px;
+                    margin-left: 4px;
+                    align-self: center;
+                }
+            }
+        }
+
+        img {
+            display: block; //important for image
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+}
