@@ -18,14 +18,19 @@ body {
     font-family: 'Acumin Pro Bold';
 }
 
-@mixin color-fill($color) {
-    fill: $color;
-    color: $color;
+@mixin v-align {
+    display: grid;
+    align-content: center;
 }
 
 nav {
     height: 60px;
     font-size: 15px;
+
+    @mixin color-fill($color) {
+        fill: $color;
+        color: $color;
+    }
 
     &.site-nav {
         background-color: $site-nav-color;
@@ -80,7 +85,8 @@ nav {
             background-color: white;
         }
 
-        @media (min-width: 1024px){
+        @media (min-width: 1024px) {
+
             a,
             span {
                 @include color-fill(#a4a4a4)
@@ -108,26 +114,46 @@ nav {
     &.main-nav {
         box-shadow: 0 0 4px rgba(0, 0, 0, .1);
 
+        .hScroll {
+            height: 100%;
+
+
+            box-sizing: border-box;
+            padding: 25px .5rem;
+
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+
+            @media(min-width: 600px) {
+                justify-content: center;
+            }
+        }
+
         a {
             color: $behance-blue;
+            padding: 0 .5rem;
+            flex: 0 0 auto;
         }
 
         a:hover {
             @include color-fill(black)
         }
-        
+
     }
 
 
 }
 
 
-@mixin showcase-height($showcase-height) {
-    height: $showcase-height;
-    font-size: $showcase-height/3;
-}
+
 
 .showcase {
+    @mixin showcase-height($showcase-height) {
+        height: $showcase-height;
+        font-size: $showcase-height/3;
+    }
+
     @include showcase-height(100px);
 
     color: white;
@@ -148,19 +174,6 @@ nav {
         @include showcase-height(210px);
     }
 }
-
-
-
-@media (min-width: 1024px) {
-    nav {
-        &.site-nav {
-
-           
-        }
-
-    }
-}
-
 
 
 .gallery {
