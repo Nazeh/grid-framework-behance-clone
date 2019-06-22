@@ -56,7 +56,7 @@ nav {
         .blue-btn {
             background-color: $behance-blue;
             width: 160px;
-            
+
             font-size: 14px;
             font-family: Arial, Helvetica, sans-serif;
             font-weight: bold;
@@ -74,7 +74,7 @@ nav {
             transition: .3s;
         }
 
-        .circle-icon{
+        .circle-icon {
             width: $btn-height;
         }
 
@@ -188,22 +188,88 @@ nav {
 
 .card {
     div {
+        position: relative;
         border-radius: 5px;
         overflow: hidden;
-        background-color: #838383;
 
-        a {
-            position: relative;
-            display: block;
+        .cover {
+            position: absolute;
             width: 100%;
-            padding-top: 78%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%,
+                    rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, .5) 100%);
 
-            img {
-                position: absolute;
-                top: 0;
-                width: 100%;
-                height: 100%;
+            transition: .2s;
+
+            @media (min-width: 576px) {
+                opacity: 0;
+
+                &:hover {
+                    opacity: 1;
+                }
             }
+
+            ;
+
+            header {
+                position: absolute;
+                bottom: 0;
+                padding: 1rem .5rem;
+                box-sizing: border-box;
+                width: 100%;
+
+                color: white;
+                fill: white;
+
+                .container{
+                    grid-row-gap: 0;
+                }
+                
+                .right div{
+                    display: flex;
+                    justify-content: right;
+                }
+
+                span {
+                    height: 20px;
+                    margin-left: 4px;
+                    transform: translateY(-6px)
+                }
+
+                svg {
+                    height: 100%;
+
+                }
+
+                h2 {
+                    font-size: 16px;
+                    text-transform: capitalize;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+
+                h3 {
+                    font-size: 14px;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+                
+                h4{
+                    font-size: 12px;
+                    margin-left: 4px;
+                    align-self: center;
+                }
+            }
+        }
+
+        img {
+            display: block; //important for image
+            width: 100%;
+            object-fit: cover;
         }
     }
 }
