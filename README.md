@@ -8,7 +8,7 @@ Built With:
 * Sass
 
 # GitHub Page
-[Live version](https://raw.githack.com/Nazeh/grid-framework-behance-clone/development/index.html)
+[Live version](https://nazeh.github.io/grid-framework-behance-clone/)
 
 # How it works:
 * use .container to define a grid row divided to 120 column.
