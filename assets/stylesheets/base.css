@@ -60,144 +60,183 @@ table {
 */
 .container {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  padding-left: 10px;
-  padding-right: 10px;
+  height: 100%;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[120];
+      grid-template-columns: repeat(120, 1fr);
+  grid-row-gap: 1rem;
 }
 
-.container.grid {
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+.container .cell {
+  display: -ms-grid;
+  display: grid;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  grid-column: span 120;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
-.container.row {
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+.container .cell.left {
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
 }
 
-.container .grid-item {
-  padding: 10px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+.container .cell.center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.grid-item {
-  width: 100%;
+.container .cell.right {
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+}
+
+.container .col-2 {
+  grid-column: span 60;
+}
+
+.container .col-3 {
+  grid-column: span 40;
+}
+
+.container .col-4 {
+  grid-column: span 30;
+}
+
+.container .col-5 {
+  grid-column: span 24;
+}
+
+.container .col-6 {
+  grid-column: span 20;
+}
+
+.container .col-8 {
+  grid-column: span 15;
+}
+
+.container .col-10 {
+  grid-column: span 12;
+}
+
+.container .col-12 {
+  grid-column: span 10;
 }
 
 @media (min-width: 576px) {
-  .col-sm-2 {
-    width: 50%;
+  .container .col-sm-2 {
+    grid-column: span 60;
   }
-  .col-sm-3 {
-    width: 33.33333%;
+  .container .col-sm-3 {
+    grid-column: span 40;
   }
-  .col-sm-4 {
-    width: 25%;
+  .container .col-sm-4 {
+    grid-column: span 30;
   }
-  .col-sm-5 {
-    width: 20%;
+  .container .col-sm-5 {
+    grid-column: span 24;
   }
-  .col-sm-6 {
-    width: 16.66667%;
+  .container .col-sm-6 {
+    grid-column: span 20;
   }
-  .col-sm-8 {
-    width: 12.5%;
+  .container .col-sm-8 {
+    grid-column: span 15;
   }
-  .col-sm-10 {
-    width: 10%;
+  .container .col-sm-10 {
+    grid-column: span 12;
   }
-  .col-sm-12 {
-    width: 8.33333%;
+  .container .col-sm-12 {
+    grid-column: span 10;
   }
 }
 
 @media (min-width: 960px) {
-  .col-md-2 {
-    width: 50%;
+  .container .col-md-2 {
+    grid-column: span 60;
   }
-  .col-md-3 {
-    width: 33.33333%;
+  .container .col-md-3 {
+    grid-column: span 40;
   }
-  .col-md-4 {
-    width: 25%;
+  .container .col-md-4 {
+    grid-column: span 30;
   }
-  .col-md-5 {
-    width: 20%;
+  .container .col-md-5 {
+    grid-column: span 24;
   }
-  .col-md-6 {
-    width: 16.66667%;
+  .container .col-md-6 {
+    grid-column: span 20;
   }
-  .col-md-8 {
-    width: 12.5%;
+  .container .col-md-8 {
+    grid-column: span 15;
   }
-  .col-md-10 {
-    width: 10%;
+  .container .col-md-10 {
+    grid-column: span 12;
   }
-  .col-md-12 {
-    width: 8.33333%;
+  .container .col-md-12 {
+    grid-column: span 10;
   }
 }
 
 @media (min-width: 1200px) {
-  .col-lg-2 {
-    width: 50%;
+  .container .col-lg-2 {
+    grid-column: span 60;
   }
-  .col-lg-3 {
-    width: 33.33333%;
+  .container .col-lg-3 {
+    grid-column: span 40;
   }
-  .col-lg-4 {
-    width: 25%;
+  .container .col-lg-4 {
+    grid-column: span 30;
   }
-  .col-lg-5 {
-    width: 20%;
+  .container .col-lg-5 {
+    grid-column: span 24;
   }
-  .col-lg-6 {
-    width: 16.66667%;
+  .container .col-lg-6 {
+    grid-column: span 20;
   }
-  .col-lg-8 {
-    width: 12.5%;
+  .container .col-lg-8 {
+    grid-column: span 15;
   }
-  .col-lg-10 {
-    width: 10%;
+  .container .col-lg-10 {
+    grid-column: span 12;
   }
-  .col-lg-12 {
-    width: 8.33333%;
+  .container .col-lg-12 {
+    grid-column: span 10;
   }
 }
 
 @media (min-width: 1440px) {
-  .col-xlg-2 {
-    width: 50%;
+  .container .col-xlg-2 {
+    grid-column: span 60;
   }
-  .col-xlg-3 {
-    width: 33.33333%;
+  .container .col-xlg-3 {
+    grid-column: span 40;
   }
-  .col-xlg-4 {
-    width: 25%;
+  .container .col-xlg-4 {
+    grid-column: span 30;
   }
-  .col-xlg-5 {
-    width: 20%;
+  .container .col-xlg-5 {
+    grid-column: span 24;
   }
-  .col-xlg-6 {
-    width: 16.66667%;
+  .container .col-xlg-6 {
+    grid-column: span 20;
   }
-  .col-xlg-8 {
-    width: 12.5%;
+  .container .col-xlg-8 {
+    grid-column: span 15;
   }
-  .col-xlg-10 {
-    width: 10%;
+  .container .col-xlg-10 {
+    grid-column: span 12;
   }
-  .col-xlg-12 {
-    width: 8.33333%;
+  .container .col-xlg-12 {
+    grid-column: span 10;
   }
 }
 
@@ -207,14 +246,99 @@ This is for styling the UI elements of Behance.net clone
 */
 a {
   cursor: pointer;
+  text-decoration: none;
+}
+
+body {
+  font-family: 'Acumin Pro Bold';
 }
 
 nav {
   height: 60px;
+  font-size: 15px;
 }
 
 nav.site-nav {
-  background-color: #2b2b2b;
+  background-color: #191919;
+}
+
+nav.site-nav a {
+  fill: white;
+  color: white;
+}
+
+nav.site-nav a:hover {
+  fill: white;
+  color: white;
+}
+
+nav.site-nav svg {
+  height: 16px;
+}
+
+nav.site-nav .hide-sm {
+  display: none;
+}
+
+nav.site-nav .blue-btn {
+  background-color: #0057ff;
+  width: 160px;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+nav.site-nav .blue-btn:hover {
+  background-color: #0048d8;
+}
+
+nav.site-nav .icon {
+  display: -ms-grid;
+  display: grid;
+  height: 32px;
+  place-content: center;
+  border-radius: 16px;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+nav.site-nav .circle-icon {
+  width: 32px;
+}
+
+nav.site-nav .facebook-icon {
+  background-color: #3b5998;
+}
+
+nav.site-nav .facebook-icon:hover {
+  background-color: #263963;
+}
+
+nav.site-nav .google-icon {
+  background-color: white;
+}
+
+@media (min-width: 1024px) {
+  nav.site-nav a,
+  nav.site-nav span {
+    fill: #a4a4a4;
+    color: #a4a4a4;
+  }
+  nav.site-nav span {
+    font-size: 12px;
+  }
+  nav.site-nav .white {
+    fill: white;
+    color: white;
+  }
+  nav.site-nav .hide-lg {
+    display: none;
+  }
+  nav.site-nav .hide-sm {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 
 nav.main-nav {
@@ -222,56 +346,170 @@ nav.main-nav {
           box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
 }
 
-nav svg {
-  height: 16px;
-  fill: white;
+nav.main-nav .hScroll {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0 .5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+@media (min-width: 600px) {
+  nav.main-nav .hScroll {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+nav.main-nav a {
+  color: #0057ff;
+  padding: 0 .5rem;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+}
+
+nav.main-nav a:hover {
+  fill: black;
+  color: black;
 }
 
 .showcase {
-  height: 210px;
-  background-color: red;
+  height: 100px;
+  font-size: 33.33333px;
   color: white;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  background-image: url("https://a5.behance.net/34469dc70cc9112a2e59c09efe8fe570cc65b3d6/img/site/1x/cta-header.jpg");
+  background-size: cover;
+  background-position: 50%;
 }
 
 .showcase h1 {
   text-align: center;
-  font-size: 28px;
   letter-spacing: -0.11rem;
-  font-weight: 900;
+}
+
+@media (min-width: 600px) {
+  .showcase {
+    height: 160px;
+    font-size: 53.33333px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .showcase {
+    height: 210px;
+    font-size: 70px;
+  }
 }
 
 .gallery {
   padding-top: 50px;
   padding-bottom: 50px;
+  max-width: 3400px;
+  margin: auto;
 }
 
 .card div {
+  position: relative;
   border-radius: 5px;
   overflow: hidden;
-  background-color: #838383;
 }
 
-.card div a {
-  position: relative;
-  display: block;
-  width: 100%;
-  padding-top: 78%;
-}
-
-.card div a img {
+.card div .cover {
   position: absolute;
-  top: 0;
   width: 100%;
   height: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), color-stop(60%, rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.5)));
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.5) 100%);
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+@media (min-width: 576px) {
+  .card div .cover {
+    opacity: 0;
+  }
+  .card div .cover:hover {
+    opacity: 1;
+  }
+}
+
+.card div .cover header {
+  position: absolute;
+  bottom: 0;
+  padding: 1rem .5rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  color: white;
+  fill: white;
+}
+
+.card div .cover header .container {
+  grid-row-gap: 0;
+}
+
+.card div .cover header .right div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+}
+
+.card div .cover header span {
+  height: 20px;
+  margin-left: 4px;
+  -webkit-transform: translateY(-6px);
+          transform: translateY(-6px);
+}
+
+.card div .cover header svg {
+  height: 100%;
+}
+
+.card div .cover header h2 {
+  font-size: 16px;
+  text-transform: capitalize;
+}
+
+.card div .cover header h2:hover {
+  text-decoration: underline;
+}
+
+.card div .cover header h3 {
+  font-size: 14px;
+}
+
+.card div .cover header h3:hover {
+  text-decoration: underline;
+}
+
+.card div .cover header h4 {
+  font-size: 12px;
+  margin-left: 4px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.card div img {
+  display: block;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 @font-face {
   font-family: 'Acumin Pro Bold';
   font-style: normal;
   font-weight: normal;
-  src: local("Acumin Pro Bold"), url("Acumin-BdPro.woff") format("woff");
+  src: local("Acumin Pro Bold"), url("../fonts/Acumin-BdPro.woff") format("woff");
 }
 /*# sourceMappingURL=base.css.map */
