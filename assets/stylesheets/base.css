@@ -67,7 +67,7 @@ table {
           box-sizing: border-box;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[120];
+  
       grid-template-columns: repeat(120, 1fr);
   grid-row-gap: 1rem;
 }
