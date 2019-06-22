@@ -27,18 +27,14 @@ nav {
     height: 60px;
     font-size: 15px;
 
-    a{
-        display: flex;
-        align-items: center;
-    }
-
     &.site-nav {
         background-color: $site-nav-color;
 
         a {
             @include color-fill(white)
         }
-        a:hover{
+
+        a:hover {
             @include color-fill(white)
         }
 
@@ -49,65 +45,77 @@ nav {
         .hide-sm {
             display: none;
         }
-        .blue-btn{
+
+        .blue-btn {
             background-color: $behance-blue;
             height: 32px;
             border-radius: 16px;
             font-size: 14px;
             font-family: Arial, Helvetica, sans-serif;
             font-weight: bold;
-            transition: .3s ;
-            &:hover{
+            transition: .3s;
+
+            &:hover {
                 background-color: $behance-blue-hover;
             }
         }
-        
-        .icon{
+
+        .icon {
             height: 32px;
             width: 12px;
             justify-content: center;
             border-radius: 16px;
         }
 
-        .facebook-icon{
+        .facebook-icon {
             background-color: $facebook-blue;
             margin-right: 10px;
         }
-        
-        .facebook-icon:hover{
+
+        .facebook-icon:hover {
             background-color: $facebook-blue-hover;
         }
-        .google-icon{
+
+        .google-icon {
             background-color: white;
+        }
+
+        @media (min-width: 1024px){
+            a,
+            span {
+                @include color-fill(#a4a4a4)
+            }
+
+            span {
+                margin-top: 10px;
+                font-size: 12px;
+            }
+
+            .white {
+                @include color-fill(white)
+            }
+
+            .hide-lg {
+                display: none;
+            }
+
+            .hide-sm {
+                display: flex;
+            }
         }
     }
 
     &.main-nav {
         box-shadow: 0 0 4px rgba(0, 0, 0, .1);
 
-        a{
+        a {
             color: $behance-blue;
         }
 
-        a:hover{
+        a:hover {
             @include color-fill(black)
         }
-
-        .hScroll{
-            width: 600px;
-            height: 300px;
-            overflow-y: auto;
-            overflow-x:hidden;
-            transform: rotate(-90deg);
-            transform-origin: right top;
-            transform: rotate(-90deg) translateY(-100px);
-            a{
-                width: 600px;
-                height: 100px; 
-                transform: rotate(90deg);
-                transform-origin: right top;
-            }
-        }
+        
     }
 
 
@@ -132,49 +140,34 @@ nav {
         letter-spacing: -0.11rem;
     }
 
-}
-
-@media (min-width: 600px) {
-    .showcase {
+    @media (min-width: 600px) {
         @include showcase-height(160px);
     }
-}
 
-@media (min-width: 1024px) {
-    nav {
-        &.site-nav {
-            a,span{
-                @include color-fill(#a4a4a4)
-            }
-
-            span{
-                margin-top: 10px;
-                font-size: 12px;
-            }
-
-            .white{
-                @include color-fill(white)
-            }
-
-            .hide-lg{
-                display: none;
-            }
-
-            .hide-sm {
-                display: flex;
-            }
-        }
-
-    }
-
-    .showcase {
+    @media (min-width: 1024px) {
         @include showcase-height(210px);
     }
 }
 
+
+
+@media (min-width: 1024px) {
+    nav {
+        &.site-nav {
+
+           
+        }
+
+    }
+}
+
+
+
 .gallery {
     padding-top: 50px;
     padding-bottom: 50px;
+    max-width: 3400px;
+    margin: auto;
 }
 
 .card {
@@ -198,5 +191,3 @@ nav {
         }
     }
 }
-
-

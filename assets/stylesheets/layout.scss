@@ -20,63 +20,80 @@ $breakpoint-large: 1200px;
 $breakpoint-medium: 960px;
 $breakpoint-small: 576px;
 
+$gutter: 1rem;
 
+
+// Grid system
 .container {
     width: 100%;
-    display: flex;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: $gutter / 2;
+    padding-right: $gutter / 2;
     box-sizing: border-box;
-    align-items: center;
 
-    &.grid{
-        flex-wrap: wrap;
-    }
+    display: grid;
+    grid-template-columns: repeat(120, 1fr);
 
-    &.row{
-        justify-content: space-between;
-    }
+    grid-row-gap: $gutter;
 
-    .row-item{
-        padding: 0 10px;
-    }
+    align-content: center;
 
-    &.row-center{
-        justify-content: center;
-    }
+    .cell {
+        display: grid;
+        grid-column: span 120;
+        padding-left: $gutter / 2;
+        padding-right: $gutter / 2;
 
-    .grid-item {
-        padding: 10px;
-        box-sizing: border-box;
-    }
-}
+        &.left {
+            justify-content: left;
+        }
 
-// columns
-.grid-item {
-    width: 100%;
-}
+        &.center {
+            justify-content: center;
+        }
 
-
-@media (min-width: $breakpoint-small) {
-    @each $division in $divisions {
-        .col-sm-#{$division} {
-            width: 100% / $division;
+        &.right {
+            justify-content: right;
         }
     }
-}
 
-@media (min-width: $breakpoint-medium) {
+
     @each $division in $divisions {
-        .col-md-#{$division} {
-            width: 100% / $division;
+        .col-#{$division} {
+            grid-column: span 120/$division;
         }
     }
-}
 
-@media (min-width: $breakpoint-large) {
-    @each $division in $divisions {
-        .col-lg-#{$division} {
-            width: 100% / $division;
+    @media (min-width: $breakpoint-small) {
+        @each $division in $divisions {
+            .col-sm-#{$division} {
+                grid-column: span 120/$division;
+            }
         }
     }
+
+
+    @media (min-width: $breakpoint-medium) {
+        @each $division in $divisions {
+            .col-md-#{$division} {
+                grid-column: span 120/$division;
+            }
+        }
+    }
+
+    @media (min-width: $breakpoint-large) {
+        @each $division in $divisions {
+            .col-lg-#{$division} {
+                grid-column: span 120/$division;
+            }
+        }
+    }
+
+    @media (min-width: $breakpoint-x-large) {
+        @each $division in $divisions {
+            .col-xlg-#{$division} {
+                grid-column: span 120/$division;
+            }
+        }
+    }
+
 }

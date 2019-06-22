@@ -16,15 +16,6 @@ nav {
   font-size: 15px;
 }
 
-nav a {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
 nav.site-nav {
   background-color: #191919;
 }
@@ -84,6 +75,30 @@ nav.site-nav .google-icon {
   background-color: white;
 }
 
+@media (min-width: 1024px) {
+  nav.site-nav a,
+  nav.site-nav span {
+    fill: #a4a4a4;
+    color: #a4a4a4;
+  }
+  nav.site-nav span {
+    margin-top: 10px;
+    font-size: 12px;
+  }
+  nav.site-nav .white {
+    fill: white;
+    color: white;
+  }
+  nav.site-nav .hide-lg {
+    display: none;
+  }
+  nav.site-nav .hide-sm {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
 nav.main-nav {
   -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
           box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
@@ -96,28 +111,6 @@ nav.main-nav a {
 nav.main-nav a:hover {
   fill: black;
   color: black;
-}
-
-nav.main-nav .hScroll {
-  width: 600px;
-  height: 300px;
-  overflow-y: auto;
-  overflow-x: hidden;
-  -webkit-transform: rotate(-90deg);
-          transform: rotate(-90deg);
-  -webkit-transform-origin: right top;
-          transform-origin: right top;
-  -webkit-transform: rotate(-90deg) translateY(-100px);
-          transform: rotate(-90deg) translateY(-100px);
-}
-
-nav.main-nav .hScroll a {
-  width: 600px;
-  height: 100px;
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
-  -webkit-transform-origin: right top;
-          transform-origin: right top;
 }
 
 .showcase {
@@ -142,26 +135,6 @@ nav.main-nav .hScroll a {
 }
 
 @media (min-width: 1024px) {
-  nav.site-nav a, nav.site-nav span {
-    fill: #a4a4a4;
-    color: #a4a4a4;
-  }
-  nav.site-nav span {
-    margin-top: 10px;
-    font-size: 12px;
-  }
-  nav.site-nav .white {
-    fill: white;
-    color: white;
-  }
-  nav.site-nav .hide-lg {
-    display: none;
-  }
-  nav.site-nav .hide-sm {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
   .showcase {
     height: 210px;
     font-size: 70px;
@@ -171,6 +144,8 @@ nav.main-nav .hScroll a {
 .gallery {
   padding-top: 50px;
   padding-bottom: 50px;
+  max-width: 3400px;
+  margin: auto;
 }
 
 .card div {
