@@ -187,10 +187,23 @@ nav {
 }
 
 .card {
-    div {
+
+    >div {
         position: relative;
         border-radius: 5px;
         overflow: hidden;
+
+        .ribbon {
+            position: absolute;
+            right: 1rem;
+            transform: translateY(-50%);
+            transition: .2s;
+            @media(max-width: 576px){
+                transform: translateY(-15%);
+            }
+
+        }
+
 
         .cover {
             position: absolute;
@@ -203,13 +216,19 @@ nav {
 
             @media (min-width: 576px) {
                 opacity: 0;
-
-                &:hover {
-                    opacity: 1;
-                }
             }
 
-            ;
+            &:hover {
+                opacity: 1;
+
+                .ribbon {
+                    transform: translateY(-15%);
+
+                    &:hover {
+                        transform: translateY(0%);
+                    }
+                }
+            }
 
             header {
                 position: absolute;
@@ -221,11 +240,11 @@ nav {
                 color: white;
                 fill: white;
 
-                .container{
+                .container {
                     grid-row-gap: 0;
                 }
-                
-                .right div{
+
+                .right div {
                     display: flex;
                     justify-content: right;
                 }
@@ -257,8 +276,8 @@ nav {
                         text-decoration: underline;
                     }
                 }
-                
-                h4{
+
+                h4 {
                     font-size: 12px;
                     margin-left: 4px;
                     align-self: center;

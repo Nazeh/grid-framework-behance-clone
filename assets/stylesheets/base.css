@@ -414,13 +414,29 @@ nav.main-nav a:hover {
   margin: auto;
 }
 
-.card div {
+.card > div {
   position: relative;
   border-radius: 5px;
   overflow: hidden;
 }
 
-.card div .cover {
+.card > div .ribbon {
+  position: absolute;
+  right: 1rem;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+@media (max-width: 576px) {
+  .card > div .ribbon {
+    -webkit-transform: translateY(-15%);
+            transform: translateY(-15%);
+  }
+}
+
+.card > div .cover {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -431,15 +447,26 @@ nav.main-nav a:hover {
 }
 
 @media (min-width: 576px) {
-  .card div .cover {
+  .card > div .cover {
     opacity: 0;
-  }
-  .card div .cover:hover {
-    opacity: 1;
   }
 }
 
-.card div .cover header {
+.card > div .cover:hover {
+  opacity: 1;
+}
+
+.card > div .cover:hover .ribbon {
+  -webkit-transform: translateY(-15%);
+          transform: translateY(-15%);
+}
+
+.card > div .cover:hover .ribbon:hover {
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
+}
+
+.card > div .cover header {
   position: absolute;
   bottom: 0;
   padding: 1rem .5rem;
@@ -450,11 +477,11 @@ nav.main-nav a:hover {
   fill: white;
 }
 
-.card div .cover header .container {
+.card > div .cover header .container {
   grid-row-gap: 0;
 }
 
-.card div .cover header .right div {
+.card > div .cover header .right div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -463,35 +490,35 @@ nav.main-nav a:hover {
           justify-content: right;
 }
 
-.card div .cover header span {
+.card > div .cover header span {
   height: 20px;
   margin-left: 4px;
   -webkit-transform: translateY(-6px);
           transform: translateY(-6px);
 }
 
-.card div .cover header svg {
+.card > div .cover header svg {
   height: 100%;
 }
 
-.card div .cover header h2 {
+.card > div .cover header h2 {
   font-size: 16px;
   text-transform: capitalize;
 }
 
-.card div .cover header h2:hover {
+.card > div .cover header h2:hover {
   text-decoration: underline;
 }
 
-.card div .cover header h3 {
+.card > div .cover header h3 {
   font-size: 14px;
 }
 
-.card div .cover header h3:hover {
+.card > div .cover header h3:hover {
   text-decoration: underline;
 }
 
-.card div .cover header h4 {
+.card > div .cover header h4 {
   font-size: 12px;
   margin-left: 4px;
   -ms-flex-item-align: center;
@@ -499,7 +526,7 @@ nav.main-nav a:hover {
       align-self: center;
 }
 
-.card div img {
+.card > div img {
   display: block;
   width: 100%;
   -o-object-fit: cover;
