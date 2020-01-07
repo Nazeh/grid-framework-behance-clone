@@ -382,7 +382,7 @@ nav.main-nav a:hover {
   height: 100px;
   font-size: 33.33333px;
   color: white;
-  background-image: url("https://a5.behance.net/34469dc70cc9112a2e59c09efe8fe570cc65b3d6/img/site/1x/cta-header.jpg");
+  background-image: url("../images/cta-header.jpg");
   background-size: cover;
   background-position: 50%;
 }
