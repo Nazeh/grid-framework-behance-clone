@@ -30,7 +30,7 @@ Download [layout.css](assets/stylesheets/layout.css) or [layout.scss](assets/sty
 
 👤 **Nazeh**
 
-* Website: nazeh.me
+* Website: [nazeh.me](http://nazeh.me/)
 * Twitter: [@arnazeh](https://twitter.com/arnazeh)
 * Github: [@nazeh](https://github.com/nazeh)
 * LinkedIn: [@arnazeh](https://linkedin.com/in/arnazeh)
