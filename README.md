@@ -20,11 +20,11 @@ Download [layout.css](assets/stylesheets/layout.css) or [layout.scss](assets/sty
 
 ## Usage
 
-* use .container to define a grid row divided to 120 column.
+* use .container to define a grid row divided to 120 columns.
 * use .cell for each child of container to ensure spanning the whole width of the row by default and add horizontal gutters.
-* define the width of each cell by giving it a class as follows: col-$break-point-$divison or col-$divison if no break points needed.
-* unlike bootstrap divison defines the fraction of the row your cell's width should be, so if you want to have 3 equal columns you give each cell class="cell col-3"
-* there is also left right and center classes to define justify-content property, that's why each cell has display:grid as well as the container.
+* define the width of each cell by giving it a class as follows: col-$break-point-$divison or col-$divison if no breakpoints needed.
+* unlike bootstrap, division defines the fraction of the row your cell's width should be, so if you want to have 3 equal columns you give each cell class="cell col-3"
+* there is also left right and center classes to define the justify-content property, that's why each cell has display: grid as well as the container.
 
 ## Author
 
